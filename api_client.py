@@ -7,8 +7,12 @@ def get_weather(city):
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
-        print(data["main"]["temp"])
-        print(data["main"]["feels_like"])
+        return {"Temperature": data["main"]["temp"],
+                "Feels like": data["main"]["feels_like"],
+                "Success": True}
+    else:
+        return {"Success": False,
+                "Error": "City not found or connection error"}
 load_dotenv()
 key = os.getenv("key")
-get_weather("Bochnia")
+print(get_weather("Bochniaaa"))
