@@ -15,4 +15,4 @@ def get_weather(city):
                 "Error": "City not found or connection error"}
 load_dotenv()
 key = os.getenv("key")
-print(get_weather("Bochniaaa"))
+get_weather("Bochniaaa")
